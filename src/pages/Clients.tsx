@@ -1,9 +1,15 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Upload, Plus } from 'lucide-react';
 
 const Clients = () => {
+  const mainClients = [
+    { name: 'Dalbit Petroleum', logo: '/lovable-uploads/fa793fdc-c723-40a9-b149-36de802c5bda.png' },
+    { name: 'Oil Hub', logo: '/lovable-uploads/0bcdc1f3-d47a-46de-9e6c-0e42b204c91d.png' },
+    { name: 'Galana Energies', logo: '/lovable-uploads/72e5da85-7df6-4b9f-8bb3-f2bb80938f16.png' },
+    { name: 'Leadway', logo: '/lovable-uploads/17957379-c46c-4915-952f-e856703952c4.png' }
+  ];
+
   const partnerCategories = [
     {
       title: 'Oil Marketing Companies (OMCs)',
@@ -112,40 +118,34 @@ const Clients = () => {
         </div>
       </section>
 
-      {/* Client Logos Section - CMS Feature */}
+      {/* Main Clients Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">Trusted by Leading Oil Marketing Companies</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Main Clients</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Our clients include major petroleum companies, government agencies, and industrial organizations across East Africa.
+              Proud to serve leading petroleum companies across East Africa with reliable and safe logistics solutions.
             </p>
           </div>
           
-          {/* Client Logo Grid - CMS Upload Area */}
-          <div className="bg-white rounded-lg p-8 mb-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-8">
-              {/* Placeholder for client logos */}
-              {[...Array(12)].map((_, index) => (
-                <div key={index} className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center hover:shadow-md transition-shadow">
-                  <div className="text-gray-400 text-center">
-                    <div className="text-2xl mb-2">🏢</div>
-                    <div className="text-xs">Client Logo</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Admin Upload Section */}
-            <div className="text-center border-2 border-dashed border-gray-300 rounded-lg p-8">
-              <Upload className="h-12 w-12 mx-auto mb-4 text-gray-400" />
-              <h3 className="text-lg font-semibold mb-2 text-gray-700">Upload Client Logos</h3>
-              <p className="text-gray-500 mb-4">Drag and drop client logos here or click to browse</p>
-              <Button className="bg-primary text-white hover:bg-primary/90">
-                <Plus className="h-4 w-4 mr-2" />
-                Add Client Logo
-              </Button>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {mainClients.map((client, index) => (
+              <Card key={index} className="p-8 flex items-center justify-center hover:shadow-lg transition-shadow bg-white">
+                <CardContent className="p-0 flex items-center justify-center">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} Logo`}
+                    className="max-h-20 max-w-full object-contain"
+                  />
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-gray-600 mb-6">
+              These partnerships represent our commitment to excellence and reliability in petroleum logistics across East Africa.
+            </p>
           </div>
         </div>
       </section>
