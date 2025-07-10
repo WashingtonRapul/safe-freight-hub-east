@@ -25,7 +25,7 @@ const Navigation = () => {
           {/* Logo and Company Name */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/abb59179-451b-4bc1-82de-a3f2a58b974a.png" 
+              src="/lovable-uploads/29bd2abd-d36f-45fb-8701-ce230615f4e0.png" 
               alt="Safe Freight Logistics Logo" 
               className="h-10 w-10 mr-3"
             />
