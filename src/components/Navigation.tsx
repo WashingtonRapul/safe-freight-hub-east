@@ -22,13 +22,20 @@ const Navigation = () => {
     <nav className="bg-white shadow-lg fixed w-full z-50 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+          {/* Logo and Company Name */}
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-primary">
-              Safe Freight Logistics
-            </div>
-            <div className="ml-2 text-sm text-accent font-semibold">
-              Know Safety, No Pain
+            <img 
+              src="/lovable-uploads/abb59179-451b-4bc1-82de-a3f2a58b974a.png" 
+              alt="Safe Freight Logistics Logo" 
+              className="h-10 w-10 mr-3"
+            />
+            <div className="flex flex-col">
+              <div className="text-xl font-bold text-primary">
+                Safe Freight Logistics Ltd
+              </div>
+              <div className="text-xs text-accent font-semibold">
+                Know Safety, No Pain
+              </div>
             </div>
           </div>
 

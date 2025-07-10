@@ -1,5 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Upload, Plus } from 'lucide-react';
 
 const Clients = () => {
   const partnerCategories = [
@@ -106,6 +108,44 @@ const Clients = () => {
               Trusted by leading organizations across East Africa for reliable, 
               safe, and efficient petroleum logistics solutions.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Logos Section - CMS Feature */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Trusted by Leading Oil Marketing Companies</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Our clients include major petroleum companies, government agencies, and industrial organizations across East Africa.
+            </p>
+          </div>
+          
+          {/* Client Logo Grid - CMS Upload Area */}
+          <div className="bg-white rounded-lg p-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-8">
+              {/* Placeholder for client logos */}
+              {[...Array(12)].map((_, index) => (
+                <div key={index} className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center hover:shadow-md transition-shadow">
+                  <div className="text-gray-400 text-center">
+                    <div className="text-2xl mb-2">🏢</div>
+                    <div className="text-xs">Client Logo</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Admin Upload Section */}
+            <div className="text-center border-2 border-dashed border-gray-300 rounded-lg p-8">
+              <Upload className="h-12 w-12 mx-auto mb-4 text-gray-400" />
+              <h3 className="text-lg font-semibold mb-2 text-gray-700">Upload Client Logos</h3>
+              <p className="text-gray-500 mb-4">Drag and drop client logos here or click to browse</p>
+              <Button className="bg-primary text-white hover:bg-primary/90">
+                <Plus className="h-4 w-4 mr-2" />
+                Add Client Logo
+              </Button>
+            </div>
           </div>
         </div>
       </section>
