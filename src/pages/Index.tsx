@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,6 +18,13 @@ const Index = () => {
 
   const operationalCountries = [
     'Kenya', 'Uganda', 'Tanzania', 'Rwanda', 'South Sudan', 'DRC'
+  ];
+
+  const clients = [
+    { name: 'Dalbit Petroleum', logo: '/lovable-uploads/fa793fdc-c723-40a9-b149-36de802c5bda.png' },
+    { name: 'Oil Hub', logo: '/lovable-uploads/0bcdc1f3-d47a-46de-9e6c-0e42b204c91d.png' },
+    { name: 'Galana Energies', logo: '/lovable-uploads/72e5da85-7df6-4b9f-8bb3-f2bb80938f16.png' },
+    { name: 'Leadway', logo: '/lovable-uploads/17957379-c46c-4915-952f-e856703952c4.png' }
   ];
 
   return (
@@ -108,8 +114,45 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Operational Regions */}
+      {/* Our Trusted Clients */}
       <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Trusted Clients</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Proud to serve leading petroleum companies across East Africa with reliable and safe logistics solutions
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {clients.map((client, index) => (
+              <Card key={index} className="p-6 flex items-center justify-center hover:shadow-lg transition-shadow bg-white">
+                <CardContent className="p-0 flex items-center justify-center">
+                  <img 
+                    src={client.logo} 
+                    alt={`${client.name} Logo`}
+                    className="max-h-16 max-w-full object-contain"
+                  />
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              onClick={() => navigate('/clients')}
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-white"
+            >
+              View All Clients <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Operational Regions */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Operational Coverage</h2>
@@ -132,7 +175,7 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Our Services</h2>
@@ -169,7 +212,7 @@ const Index = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Core Values</h2>
